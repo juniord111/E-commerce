@@ -46,13 +46,13 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.error('🔴 Error al conectar a MongoDB:', err)
 })
 
-// Servir archivos estáticos del frontend
-app.use(express.static(path.join(__dirname, '../client/dist')))
+// // Servir archivos estáticos del frontend
+// app.use(express.static(path.join(__dirname, '../client/dist')))
 
-// SPA fallback (para Vue Router)
-app.get(/^\/(?!api).*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'))
-})
+// // SPA fallback (para Vue Router)
+// app.get(/^\/(?!api).*/, (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'))
+// })
 
 
 app.listen(PORT, () => {
