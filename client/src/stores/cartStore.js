@@ -33,7 +33,7 @@ export const useCartStore = defineStore('cart', () => {
   async function realizarCompra() {
     try {
       // 1. Guardar la orden en la base de datos (opcional pero recomendado)
-      await axios.post('http://localhost:5000/api/ordenes', {
+      await axios.post('https://e-commerce-nw9h.onrender.com/api/ordenes', {
         productos: items.value,
         total: totalPrecio.value
       })
@@ -47,7 +47,7 @@ export const useCartStore = defineStore('cart', () => {
       }))
 
       // 3. Crear preferencia de pago
-      const response = await axios.post('http://localhost:5000/api/ordenes/pago', {
+      const response = await axios.post('https://e-commerce-nw9h.onrender.com/api/ordenes/pago', {
         productos: productosMP
       })
 

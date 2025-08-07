@@ -50,7 +50,7 @@ const userStore = useUserStore()
 
 const login = async () => {
   try {
-    const res = await api.post('/auth/login', {
+    const res = await api.post('https://e-commerce-nw9h.onrender.com/api/auth/login', {
       email: email.value,
       password: password.value
     })

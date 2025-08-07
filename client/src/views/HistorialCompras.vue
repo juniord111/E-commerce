@@ -18,7 +18,7 @@ const token = localStorage.getItem('token')
 onMounted(async () => {
   
   try {
-    const res = await api.get('/ordenes/mis-compras', {
+    const res = await api.get('https://e-commerce-nw9h.onrender.com/api/ordenes/mis-compras', {
       headers: { Authorization: `Bearer ${token}` }
     })
     ordenes.value = res.data

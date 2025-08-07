@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = 'https://tuservidor.com/api' // Reemplaza con tu URL
+const API = 'https://e-commerce-nw9h.onrender.com/api' // Reemplaza con tu URL
 
 export async function login(correo, contraseña) {
   const res = await axios.post(`${API}/auth/login`, { correo, contraseña })
