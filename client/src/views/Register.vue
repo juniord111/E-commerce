@@ -61,7 +61,7 @@ const router = useRouter()
 
 const register = async () => {
   try {
-    await axios.post('http://localhost:5000/api/auth/register', {
+    await axios.post('https://e-commerce-nw9h.onrender.com/api/auth/register', {
       nombre: nombre.value,
       email: email.value,
       password: password.value,

@@ -92,7 +92,7 @@ onMounted(() => {
 async function pagoOnline() {
   try {
     // Paso 1: crear orden en backend
-    await axios.post('http://localhost:5000/api/ordenes', {
+    await axios.post('https://e-commerce-nw9h.onrender.com/api/ordenes', {
       productos: productos.value,
       total: total.value,
       cliente: {
@@ -106,7 +106,7 @@ async function pagoOnline() {
     }, configToken)
 
     // Paso 2: redirigir a MercadoPago
-    const response = await axios.post('http://localhost:5000/api/ordenes/pago', {
+    const response = await axios.post('https://e-commerce-nw9h.onrender.com/api/ordenes/pago', {
       productos: productos.value
     }, configToken)
 
@@ -139,7 +139,7 @@ ${productos.value.map(p => `- ${p.nombre} x${p.cantidad} - $${p.precio * p.canti
   window.open(url, '_blank')
 
   // También guardar la orden en la base de datos
-  axios.post('http://localhost:5000/api/ordenes', {
+  axios.post('https://e-commerce-nw9h.onrender.com/api/ordenes', {
     productos: productos.value,
     total: total.value,
     cliente: {
